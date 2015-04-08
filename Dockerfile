@@ -1,6 +1,13 @@
 FROM java:openjdk-8-jdk
 
-RUN apt-get update && apt-get install -y wget git curl zip && rm -rf /var/lib/apt/lists/*
+RUN apt-get update \
+  && apt-get install -y \
+    curl \
+    git \
+    nodejs \
+    wget \
+    zip \
+  && rm -rf /var/lib/apt/lists/*
 
 ENV JENKINS_HOME /var/jenkins_home
 

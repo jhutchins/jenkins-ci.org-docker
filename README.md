@@ -1,4 +1,4 @@
-# Official Jenkins Docker image
+# Jenkins Docker image with Java 8 & NodeJS
 
 The Jenkins Continuous Integration and Delivery server.
 
