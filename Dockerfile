@@ -4,7 +4,6 @@ RUN apt-get update \
   && apt-get install -y \
     curl \
     git \
-    nodejs \
     wget \
     zip \
   && rm -rf /var/lib/apt/lists/*
@@ -36,6 +35,10 @@ RUN curl -L http://mirrors.jenkins-ci.org/war-stable/$JENKINS_VERSION/jenkins.wa
 
 ENV JENKINS_UC https://updates.jenkins-ci.org
 RUN chown -R jenkins "$JENKINS_HOME" /usr/share/jenkins/ref
+
+RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash - \
+  && apt-get install -y nodejs \
+  && rm -rf /var/lib/apt/lists/*
 
 # for main web interface:
 EXPOSE 8080
